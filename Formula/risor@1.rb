@@ -1,0 +1,53 @@
+# typed: false
+# frozen_string_literal: true
+
+# Risor v1.x (preserved for users who need the original CLI).
+# v2 is available as the main "risor" formula.
+class RisorAT1 < Formula
+  desc "An embedded scripting language for Go projects"
+  homepage "https://github.com/risor-io/risor"
+  version "1.8.1"
+  license "Apache-2.0"
+
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/risor-io/risor/releases/download/v1.8.1/risor_Darwin_x86_64.tar.gz"
+      sha256 "645ff584207afaa975d652e74ab447397e232f5e402c14f48512e1695dd33ff5"
+
+      def install
+        bin.install "risor"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/risor-io/risor/releases/download/v1.8.1/risor_Darwin_arm64.tar.gz"
+      sha256 "1935f290b46f5f32f75d3162b4f09756a85e27cf59bd2c3c3e299b46814b16b4"
+
+      def install
+        bin.install "risor"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/risor-io/risor/releases/download/v1.8.1/risor_Linux_x86_64.tar.gz"
+        sha256 "171ec1b0447e0726637f933737c7fe447d7cf1c88d4b5e7c1608e61bf5654fae"
+
+        def install
+          bin.install "risor"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/risor-io/risor/releases/download/v1.8.1/risor_Linux_arm64.tar.gz"
+        sha256 "a6e2db89fe407371e030f9a6063fa839f1f63affbe8f5eb63b34666768ce3278"
+
+        def install
+          bin.install "risor"
+        end
+      end
+    end
+  end
+end
