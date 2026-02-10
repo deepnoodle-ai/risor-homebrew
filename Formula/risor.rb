@@ -5,21 +5,21 @@
 class Risor < Formula
   desc "An embedded scripting language for Go projects"
   homepage "https://github.com/deepnoodle-ai/risor"
-  version "2.0.0"
+  version "2.0.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.0/risor_Darwin_x86_64.tar.gz"
-      sha256 "5e3ddf1d8fb323f9f131f962fdabcd3f400b90bd6f68e922b718b47ecacd72f0"
+      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.1/risor_Darwin_x86_64.tar.gz"
+      sha256 "fdd659400a9b8eb79192044844c01aaa51c1287a2448f5518472ddcbeab9ed0e"
 
       def install
         bin.install "risor"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.0/risor_Darwin_arm64.tar.gz"
-      sha256 "1cca44d1f04708275aaee09c871cff28c11aae5306da35538d1848b6a05dd5f8"
+      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.1/risor_Darwin_arm64.tar.gz"
+      sha256 "d393a95fcff5ec2eeabb12a19e3a06dc1c5484a8b95971f3cac5c8cd01de7f2f"
 
       def install
         bin.install "risor"
@@ -29,15 +29,15 @@ class Risor < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.0/risor_Linux_x86_64.tar.gz"
-      sha256 "ef8739cc5cb1b57bcaa966be92cac9792f993f290409138d3272e98b32d90b0a"
+      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.1/risor_Linux_x86_64.tar.gz"
+      sha256 "f924cc26a08d62f88c4315ad33865773216a4c6ba45bf0428c2f2598e97306c5"
       def install
         bin.install "risor"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.0/risor_Linux_arm64.tar.gz"
-      sha256 "df1815deba0d632a8ebe829135b8a110b172d83074879cd96eb9cd39db3f83ae"
+      url "https://github.com/deepnoodle-ai/risor/releases/download/v2.0.1/risor_Linux_arm64.tar.gz"
+      sha256 "17abbe2d875bc93889b9fd5f160783d911af6a4555317f0949e93e801ed5a3b3"
       def install
         bin.install "risor"
       end
